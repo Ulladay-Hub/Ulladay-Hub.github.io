@@ -7,13 +7,12 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 50px;
             background-color: #f0f0f0; /* Light gray background */
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            flex-wrap: wrap;
+            padding: 20px;
+            margin: 0;
         }
         .content {
             flex: 2;
@@ -32,6 +31,8 @@
             padding: 20px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Soft shadow effect */
             border-radius: 8px;
+            overflow-y: auto;
+            height: calc(100vh - 40px);
         }
         h1 {
             color: #333; /* Dark gray heading */
@@ -73,6 +74,42 @@
             color: #555; /* Dark gray for body text */
             line-height: 1.6;
         }
+        .project-list {
+            margin-top: 20px;
+        }
+        .project-item {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Soft shadow effect */
+            border-radius: 8px;
+        }
+        .project-icon img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        .project-details {
+            text-align: left;
+        }
+        .project-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+        .project-description {
+            color: #555;
+            margin: 5px 0;
+        }
+        .project-link {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .project-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -96,14 +133,14 @@
         <div class="project-list">
             <h2>My Projects</h2>
             <div class="project-item">
-                <div class="project-icon"><img href="https://cdn.discordapp.com/attachments/1248169515842539642/1260501434298925096/PsDJ5ynv8B7nv4A74ETDpxw4IQDJxw44cAJB044cMKBEw6ccOCEAyccOOHACQdOOHDCgRMOnHDghAMnHDjhwAkHTjhwwoETDpxw4IQDJxw44cAJB044cMKBEw6ccOCEAyccOOHACQdOOHDCgRMOnHDghAMnHDjhwAkHTjhwwoETDpxw4IQDJxw44cAJB044cMKBEw6ccOCE8w8dXUcRP0pJQAAAABJRU5ErkJggg.png?ex=668f8cf0&is=668e3b70&hm=eb7651806b28554a8e7a7e4a9eba1a3bba675608a126848d85212f32488cc822&"></img></div>
+                <div class="project-icon"><img src="https://cdn.discordapp.com/attachments/1248169515842539642/1260501434298925096/PsDJ5ynv8B7nv4A74ETDpxw4IQDJxw44cAJB044cMKBEw6ccOCEAyccOOHACQdOOHDCgRMOnHDghAMnHDjhwAkHTjhwwoETDpxw4IQDJxw44cAJB044cMKBEw6ccOCE8w8dXUcRP0pJQAAAABJRU5ErkJggg.png" alt="Project Icon"></div>
                 <div class="project-details">
-                    <div class="project-name"><b>My India Duke of Ed Project</b></div><br></br>
+                    <div class="project-name">My India Duke of Ed Project</div>
                     <div class="project-description">This is a website that I made for school. It's for a task where we had to make a website. This was made without a website maker. 5 Days to make.</div>
                     <a href="India/india.html" class="project-link">Website here</a>
                 </div>
             </div>
-            <!-- To be added -->
+            <!-- Add more project items here -->
         </div>
     </div>
 </body>
