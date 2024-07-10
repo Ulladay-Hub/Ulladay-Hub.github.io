@@ -10,6 +10,28 @@
             text-align: center;
             margin: 50px;
             background-color: #f0f0f0; /* Light gray background */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        .content {
+            flex: 2;
+            max-width: 600px;
+            text-align: left; /* Align text to the left */
+            background-color: #fff; /* White background for content */
+            padding: 20px;
+            margin-right: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Soft shadow effect */
+            border-radius: 8px;
+        }
+        .sidebar {
+            flex: 1;
+            max-width: 300px;
+            background-color: #f9f9f9; /* Light gray background for sidebar */
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Soft shadow effect */
+            border-radius: 8px;
         }
         h1 {
             color: #333; /* Dark gray heading */
@@ -24,40 +46,79 @@
             margin-top: 20px;
             color: #777; /* Lighter gray for italic text */
         }
-        .project-info {
-            border: 1px solid #ccc;
+        .project-list {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .project-item {
+            background-color: #fff; /* White background for project item */
             padding: 20px;
-            margin-top: 40px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            background-color: #fff; /* White background for project info */
+            margin-bottom: 20px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Soft shadow effect */
+            border-radius: 8px;
+            text-align: left;
+            display: flex;
+            align-items: center;
         }
-        .project-info h2 {
-            color: #333; /* Dark gray heading */
+        .project-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #007bff; /* Blue background for icon */
+            color: #fff; /* White icon color */
+            font-size: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            margin-right: 20px;
         }
-        .project-info p {
-            color: #555; /* Dark gray text */
+        .project-details {
+            flex: 1;
         }
-        .project-info a {
+        .project-name {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: #333; /* Dark gray text color */
+        }
+        .project-description {
+            color: #555; /* Dark gray text color */
+            margin-bottom: 10px;
+        }
+        .project-link {
             color: #007bff; /* Blue link color */
             text-decoration: none;
             font-weight: bold;
         }
-        .project-info a:hover {
+        .project-link:hover {
             text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <h1>Hi there</h1>
-    <p class="intro-text">I'm a weird coder and I make weird stuff.</p>
-    <img src="IMG_3085.gif" alt="Animated GIF" style="max-width: 100%; height: auto;">
-    <div class="project-info">
-        <h2>My India Duke of Ed Project</h2>
-        <p>This is a website that I made for school. It's for a task where we had to make a website. This was made without a website maker. 5 Days to make</p>
-        <p><a href="India/india.html">View my website!</a></p>
+    <div class="content">
+        <h1>Hi there</h1>
+        <p class="intro-text">I'm a weird coder and I make weird stuff.</p>
+        <img src="IMG_3085.gif" alt="Animated GIF" style="max-width: 100%; height: auto;">
+        <div class="blog-posts">
+            <!-- Your blog posts content goes here -->
+            <h2>Latest Blog Posts</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+            <p>Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus.</p>
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="project-list">
+            <h2>My Projects</h2>
+            <div class="project-item">
+                <div class="project-icon">I</div>
+                <div class="project-details">
+                    <div class="project-name">My India Duke of Ed Project</div>
+                    <div class="project-description">This is a website that I made for school. It's for a task where we had to make a website. This was made without a website maker. 5 Days to make.</div>
+                    <a href="India/india.html" class="project-link">Click here to view</a>
+                </div>
+            </div>
+            <!-- Additional project items can be added similarly -->
+        </div>
     </div>
 </body>
 </html>
