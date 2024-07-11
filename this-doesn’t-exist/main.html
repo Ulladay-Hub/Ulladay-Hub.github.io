@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dead End</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .message {
+            text-align: center;
+        }
+        .hidden-redirect {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="message">
+        <h1>Huh? How did you get here?</h1>
+        <p>Well, you’ve hit a dead end, go and click that back button to get to the homepage</p>
+        <button onclick="redirectToRickroll()">Back</button>
+    </div>
+    <div class="hidden-redirect" id="redirect"></div>
+
+    <script>
+        function redirectToRickroll() {
+            document.getElementById('redirect').innerHTML = `
+                <meta http-equiv="refresh" content="0;url=rickroll.html">
+            `;
+        }
+    </script>
+</body>
+</html>
