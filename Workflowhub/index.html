@@ -4,40 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WorkflowHub</title>
-    <!-- Link to your CSS stylesheet will go here -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .top-bar {
+            background-color: #0076BF;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .logo {
+            flex: 0 0 120px; /* Fixed size for the logo */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .nav-links {
+            flex: 1;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        .nav-links a:hover {
+            background-color: #005B8A; /* Darker shade for hover */
+        }
+
+        .login-link {
+            margin-left: auto;
+        }
+
+        .welcome {
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <!-- Top bar with logo and navigation -->
     <header class="top-bar">
         <div class="logo">
-            <img src="path/to/your/logo.png" alt="WorkflowHub Logo">
+            <img src="logo.png" alt="WorkflowHub Logo" style="max-width: 100%; height: auto;">
         </div>
         <nav class="nav-links">
-            <ul>
-                <li><a href="#">Browser</a></li>
-                <li><a href="#">Designer</a></li>
-                <li><a href="#">Plans</a></li>
-                <li><a href="#">Log In</a></li>
-            </ul>
+            <a href="#">Browser</a>
+            <a href="#">Designer</a>
+            <a href="#">Plans</a>
         </nav>
+        <div class="login-link">
+            <a href="#">Log In</a>
+        </div>
     </header>
 
-    <!-- Main content section -->
     <main class="main-content">
-        <!-- Welcome message -->
         <section class="welcome">
             <h1>Hello there <span class="wave-hand">👋</span></h1>
             <p>Welcome to WorkflowHub, your ultimate tool for managing and automating workflows seamlessly. Whether you're a developer, a team lead, or a project manager, WorkflowHub empowers you to streamline your processes with ease.</p>
             <p>Founded by Bradinator in 2024, WorkflowHub has been at the forefront of innovation in workflow management, offering a robust platform where you can discover, create, and share workflows tailored to your needs. Join thousands of users who rely on WorkflowHub to simplify their development cycles and enhance productivity.</p>
             <p>Explore our diverse collection of community-made workflows or craft your own using our intuitive workflow designer. From GitHub integrations to advanced AI features, WorkflowHub is designed to meet the demands of modern software development.</p>
         </section>
-        
-        <!-- Other sections can be added here as needed -->
     </main>
 
-    <!-- Footer section -->
-    <footer class="footer">
+    <footer class="footer" style="background-color: #0076BF; color: #fff; padding: 10px; text-align: center;">
         <p>&copy; 2024 WorkflowHub. All rights reserved.</p>
     </footer>
 </body>
