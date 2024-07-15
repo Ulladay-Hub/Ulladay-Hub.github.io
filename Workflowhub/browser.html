@@ -11,103 +11,55 @@
             background-color: #f5f5f5;
             margin: 0;
             padding: 0;
+            display: flex;
         }
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .sidebar {
+            width: 250px;
             background-color: #0076BF;
-            padding: 10px 20px;
-        }
-
-        .navbar .logo {
-            height: 40px;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-links li {
-            margin-left: 20px;
-        }
-
-        .nav-links a {
             color: white;
-            text-decoration: none;
-            font-size: 18px;
+            padding: 20px;
+            height: 100vh;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
         }
 
-        .login-button {
-            display: flex;
-            align-items: center;
+        .sidebar input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .sidebar .filter-button, .sidebar .filter-dropdown button {
             background-color: white;
             color: #0076BF;
             border: none;
             padding: 10px 15px;
             border-radius: 5px;
-            font-size: 18px;
-            text-decoration: none;
-        }
-
-        .login-button .github-logo {
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
-        }
-
-        .search-section {
-            padding: 20px;
-            background-color: white;
-            margin: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .search-bar {
-            width: 100%;
-            padding: 10px;
-            font-size: 18px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-
-        .filters {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-
-        .filter-button {
-            background-color: #0076BF;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
-            margin: 5px 0;
+            margin-bottom: 10px;
+            width: 100%;
+            text-align: left;
         }
 
-        .filter-button:hover {
+        .sidebar .filter-button:hover, .sidebar .filter-dropdown button:hover {
             background-color: #005f9e;
+            color: white;
         }
 
         .filter-dropdown {
             position: relative;
-            display: inline-block;
+            display: block;
         }
 
         .filter-dropdown-content {
             display: none;
             position: absolute;
             background-color: white;
-            min-width: 160px;
+            min-width: 100%;
             box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
             z-index: 1;
             border-radius: 5px;
@@ -128,54 +80,96 @@
             display: block;
         }
 
-        .workflow-results {
-            margin: 20px;
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .workflow-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            margin-bottom: 20px;
+            width: calc(33.333% - 20px);
+            box-sizing: border-box;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .workflow-card h3 {
+            margin: 0 0 10px;
+            font-size: 18px;
+        }
+
+        .workflow-card .author, .workflow-card .version, .workflow-card .uses {
+            font-size: 14px;
+            color: #777;
+        }
+
+        .workflow-card .description {
+            margin: 10px 0;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .workflow-card button {
+            background-color: #0076BF;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .workflow-card button:hover {
+            background-color: #005f9e;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="navbar">
-            <a href="index.html"><img src="assets/logo-WITHBG.png" alt="WorkflowHub Logo" class="logo"></a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="browser.html">Browser</a></li>
-                    <li><a href="#">Designer</a></li>
-                    <li><a href="#">Plans</a></li>
-                </ul>
-            </nav>
-            <a href="#" class="login-button"><img src="assets/icons/github.png" alt="GitHub Logo" class="github-logo">Log in with GitHub</a>
-        </div>
-    </header>
-    <main>
-        <section class="search-section">
-            <input type="text" class="search-bar" placeholder="Search workflows...">
-            <div class="filters">
-                <button class="filter-button">Most Popular</button>
-                <button class="filter-button">Most Recent</button>
+    <div class="sidebar">
+        <input type="text" placeholder="Search workflows...">
+        <button class="filter-button">Most Popular</button>
+        <button class="filter-button">Most Recent</button>
                 <div class="filter-dropdown">
-                    <button class="filter-button">Related to Theme</button>
-                    <div class="filter-dropdown-content">
-                        <a href="#">Automation</a>
-                        <a href="#">Development</a>
-                        <a href="#">Design</a>
-                        <a href="#">Data Analysis</a>
-                        <a href="#">Machine Learning</a>
-                        <a href="#">Education</a>
-                        <a href="#">Finance</a>
-                        <a href="#">Healthcare</a>
-                        <a href="#">Marketing</a>
-                        <a href="#">Productivity</a>
-                    </div>
-                </div>
-                <button class="filter-button">Highest Rated</button>
-                <button class="filter-button">Most Downloads</button>
+            <button class="filter-button">Related to Theme</button>
+            <div class="filter-dropdown-content">
+                <a href="#">Automation</a>
+                <a href="#">Development</a>
+                <a href="#">Design</a>
+                <a href="#">Data Analysis</a>
+                <a href="#">Machine Learning</a>
+                <a href="#">Education</a>
+                <a href="#">Finance</a>
+                <a href="#">Healthcare</a>
+                <a href="#">Marketing</a>
+                <a href="#">Productivity</a>
             </div>
-        </section>
-        <section class="workflow-results">
-            <!-- Workflow cards will be dynamically inserted here -->
-        </section>
-    </main>
+        </div>
+        <button class="filter-button">Highest Rated</button>
+        <button class="filter-button">Most Downloads</button>
+    </div>
+    <div class="main-content">
+        <div class="workflow-card">
+            <h3>Workflow Title</h3>
+            <p class="author">by Author Name</p>
+            <p class="version">Version 1.0</p>
+            <p class="uses">1000 uses</p>
+            <p class="description">This is a brief description of the workflow. It provides an overview of what the workflow does and its main features.</p>
+            <button>Add to Repository</button>
+        </div>
+        <div class="workflow-card">
+            <h3>Another Workflow</h3>
+            <p class="author">by Another Author</p>
+            <p class="version">Version 2.1</p>
+            <p class="uses">500 uses</p>
+            <p class="description">This is another description of a different workflow. It explains the purpose and functionality of the workflow.</p>
+            <button>Add to Repository</button>
+        </div>
+        <!-- Additional workflow cards can be added here -->
+    </div>
     <script src="scripts/main.js"></script>
 </body>
 </html>
